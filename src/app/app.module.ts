@@ -1,41 +1,40 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
-import { AppComponent } from './app.component';
-import { TopBarComponent } from './top-bar/top-bar.component';
+import {AppComponent} from './app.component';
+import {TopBarComponent} from './top-bar/top-bar.component';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {PdfViewerModule} from 'ng2-pdf-viewer';
 
-import { MaterialModule} from './top-bar/material-module';
+import {MaterialModule} from './top-bar/material-module';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
-import { ResumeComponent } from './resume/resume.component';
-import { GiftIdeasComponent } from './gift-ideas/gift-ideas.component';
-import { MainPageComponent } from './main-page/main-page.component';
+import {ResumeComponent} from './resume/resume.component';
+import {GiftIdeasComponent} from './gift-ideas/gift-ideas.component';
+import {MainPageComponent} from './main-page/main-page.component';
+import {ContentService} from './shared/services/content.service';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     MaterialModule,
-    // RouterModule.forRoot([
-    //   {path: '', component: MainPageComponent},
-    //   {path: '/resume', component: ResumeComponent},
-    //   {path: '/gift-ideas', component: GiftIdeasComponent}
-    // ]),
     BrowserAnimationsModule,
+    AppRoutingModule,
+    PdfViewerModule,
+    FormsModule,
   ],
   declarations: [
     AppComponent,
     TopBarComponent,
     ResumeComponent,
     GiftIdeasComponent,
-    MainPageComponent
+    MainPageComponent,
   ],
-  bootstrap: [ AppComponent ],
-  providers: [
-    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
-  ]
+  bootstrap: [AppComponent],
+  providers: [ContentService],
 })
-export class AppModule { }
+export class AppModule {
+}
