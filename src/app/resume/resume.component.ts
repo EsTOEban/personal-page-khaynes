@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, enableProdMode, OnInit} from '@angular/core';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-resume',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResumeComponent implements OnInit {
 
-  pdfSource =  "/assets/Kevin_Haynes_Resume.pdf";
+  pdfSource =  environment.pdfSource;
 
   constructor() { }
 
