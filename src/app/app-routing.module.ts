@@ -8,7 +8,7 @@ import {ResumeComponent} from './resume/resume.component';
 const appRoutes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: MainPageComponent, data: { page: 'home' }},
-  {path: 'resume', component: ResumeComponent, data: { page: 'resume' }},
+  {path: 'about', component: ResumeComponent, data: { page: 'about' }},
   {path: 'brianna', component: MainPageComponent, data: { page: 'brianna' }},
   {path: '**', redirectTo: '/home', pathMatch: 'full'},
 ];
